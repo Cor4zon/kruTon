@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/Cor4zon/r/issues"
   },
-  "homepage": "https://github.com/Cor4zon/r#readme"
+  "homepage": "https://github.com/Cor4zon/r#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7"
+  }
 }
