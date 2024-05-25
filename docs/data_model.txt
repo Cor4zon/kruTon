@@ -1,0 +1,16 @@
+**Post Model**
+
+- id: Integer or String (Primary Key)
+- title: String
+- content: String
+- author: String
+- created_at: DateTime
+- updated_at: DateTime
+
+**User Model (For authentication)**
+
+- id: Integer or String (Primary Key)
+- username: String
+- password: String (Hashed)
+- email: String
+- created_at: DateTime
