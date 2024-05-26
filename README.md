@@ -8,7 +8,7 @@ Routes
 - /api/posts
 - /api/users
 
-Step 2: Implement CRUD Operations
+Step 2: Implement CRUD Operations ✅
 
 for posts
 
