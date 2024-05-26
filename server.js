@@ -25,6 +25,9 @@ const postsRouter = require('./routes/posts');
 app.use('/api/posts', postsRouter);
 
 
+const usersRouter = require("./routes/auth");
+app.use('/api/auth', usersRouter);
+
 
 const PORT = process.env.PORT || 3000;
 
