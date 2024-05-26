@@ -12,7 +12,7 @@ Step 2: Implement CRUD Operations ✅
 
 for posts
 
-Step 3: Implement User Authentication
+Step 3: Implement User Authentication ✅
 
 CRUD for users 
 
