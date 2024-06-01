@@ -1,11 +1,12 @@
 // routes/posts.js
 const express = require('express');
 const router = express.Router();
+const authenticateJWT = require("../middleware/auth");
 
 const Post = require('../models/Post');
 
 // Create a post
-router.post('/', async (req, res) => {
+router.post('/', authenticateJWT, async (req, res) => {
     const { title, content, author } = req.body;
     try {
         const newPost = new Post({ title, content, author });
@@ -17,7 +18,7 @@ router.post('/', async (req, res) => {
 });
 
 // Get all posts
-router.get('/', async (req, res) => {
+router.get('/', authenticateJWT, async (req, res) => {
     try {
         const posts = await Post.find();
         res.json(posts);
@@ -27,7 +28,7 @@ router.get('/', async (req, res) => {
 });
 
 // Get a single post by ID
-router.get('/:id', async (req, res) => {
+router.get('/:id', authenticateJWT, async (req, res) => {
     try {
         const post = await Post.findById(req.params.id);
         if (!post) return res.status(404).json({ message: 'Post not found' });
@@ -38,7 +39,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Update a post
-router.put('/:id', async (req, res) => {
+router.put('/:id', authenticateJWT, async (req, res) => {
     try {
         const { title, content, author } = req.body;
         const updatedPost = await Post.findByIdAndUpdate(
@@ -54,7 +55,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // Delete a post
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authenticateJWT, async (req, res) => {
     try {
         const deletedPost = await Post.findByIdAndDelete(req.params.id);
         if (!deletedPost) return res.status(404).json({ message: 'Post not found' });
